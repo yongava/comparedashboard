@@ -1,0 +1,50 @@
+<script>
+import { Line } from 'vue-chartjs'
+
+export default {
+  extends: Line,
+  name: 'LineChart',
+  props: ['chart_data'],
+  data() {
+    console.log(this.chart_data)
+    return {
+      data: {
+        labels: ['','','','','','','','','',''],
+        datasets: [{
+            data: [
+              this.chart_data[1].entries[0].close,
+              this.chart_data[1].entries[1].close,	
+              this.chart_data[1].entries[2].close,	
+              this.chart_data[1].entries[3].close,	
+              this.chart_data[1].entries[4].close,	
+              this.chart_data[1].entries[5].close,	
+              this.chart_data[1].entries[6].close,	
+              this.chart_data[1].entries[7].close,	
+              this.chart_data[1].entries[8].close, 
+              this.chart_data[1].entries[9].close
+            ], // Specify the data values array
+            fill: false,
+            borderColor: '#2196f3', // Add custom color border (Line)
+            backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+            borderWidth: 1 // Specify bar border width
+        }]
+      },
+      options: {
+        responsive: true, // Instruct chart js to respond nicely.
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        }
+      }
+    }
+  },
+  mounted () {
+    this.renderChart(this.data, this.options)
+  }
+}
+</script>
+
+<style scoped>
+  .chart {
+  }
+</style>
