@@ -27,7 +27,6 @@ h3 {
   margin: 5px;
 }
 .layer {
-  /* overflow: scroll; */
   position: relative;
 }
 </style>
