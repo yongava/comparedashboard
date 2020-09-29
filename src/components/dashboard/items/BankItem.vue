@@ -16,10 +16,7 @@
 <script>
 export default {
   name: 'BankItem',
-  props: {
-    bank_title: String,
-    bank_status: String
-  }
+  props: ['bank_title', 'bank_status']
 }
 </script>
 

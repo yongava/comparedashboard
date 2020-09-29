@@ -16,7 +16,7 @@
     <h3 class="nav-item">PG</h3>
   </div>
   <div>
-    <h3 class="nav-item">EV/EBITDA</h3>
+    <h3 class="nav-item">EV / EBITDA</h3>
   </div>
   <div>
     <h3 class="nav-item">PEG</h3>

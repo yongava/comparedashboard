@@ -11,7 +11,8 @@ export default {
         labels: ['', '', '', ''],
         datasets: [{
           label: null,
-          barThickness: 20,
+          barThickness: 10,
+          barPercentage: 0.5,
           data: [
             this.chart_data[0].entries[6].volume,
             this.chart_data[0].entries[7].volume,
@@ -44,13 +45,11 @@ export default {
         },
         scales: {
           yAxes: [{
-            barPercentage: 0.5,
             gridLines: {
               display: false
             }
           }],
           xAxes: [{
-            barPercentage: 0.5,
             gridLines: {
               display: false
             }
@@ -60,7 +59,6 @@ export default {
     }
   },
   mounted(){
-    console.log(this.chart_data)
     this.renderChart(this.data, this.options)
   }
 }

@@ -6,7 +6,6 @@ export default {
   name: 'LineChart',
   props: ['chart_data'],
   data() {
-    console.log(this.chart_data)
     return {
       data: {
         labels: ['','','','','','','','','',''],
@@ -31,7 +30,6 @@ export default {
       },
       options: {
         responsive: true, // Instruct chart js to respond nicely.
-        maintainAspectRatio: false,
         legend: {
           display: false
         }
@@ -45,6 +43,4 @@ export default {
 </script>
 
 <style scoped>
-  .chart {
-  }
 </style>
