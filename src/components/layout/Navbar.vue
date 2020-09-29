@@ -1,5 +1,5 @@
 <template>
-<div class="row justify-content-space nav-bar">
+<div class="row justify-content-space">
   <div>
     <h3 class="nav-item">Banking</h3>
   </div>
@@ -42,11 +42,7 @@ export default {
 }
 </script>
 <style scoped>
-  .nav-bar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+  
   .nav-bar > div {
     background-color: aquamarine;
     width: 100%;
@@ -58,6 +54,9 @@ export default {
     /* padding: 20px; */
   }
   
+  h3 {
+    text-align: center;
+  }
   
 
   .nav-item {

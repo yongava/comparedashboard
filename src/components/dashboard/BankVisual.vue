@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+  .bank-visualizer {
+    width: 100%;
+    margin-bottom: 3px;
+  }
   .bank-visualizer > div{
     min-height: 100px;
     width: 100%;

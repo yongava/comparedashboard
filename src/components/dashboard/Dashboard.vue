@@ -1,17 +1,15 @@
 <template>
   <div class="container">
-    <!-- <div v-for="ind in data" :key="ind.label"> -->
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-      <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
-    <!-- </div> -->
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
+    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
   </div>
 </template>
 

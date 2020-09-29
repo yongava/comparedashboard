@@ -1,6 +1,6 @@
 <template>
   <div class="layer">
-    <Navbar />
+    <Navbar class="nav-bar"/>
     <Dashboard class="main"/>
   </div>
 </template>
@@ -27,6 +27,11 @@ export default {
   display: flex;
 }
 .main {
-  margin-top: 65px;
+  /* margin-top: 65px; */
+}
+.nav-bar{
+  position: sticky;
+  top: 0%;
+  width: 2560px;
 }
 </style>
