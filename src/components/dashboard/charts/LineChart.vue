@@ -12,19 +12,19 @@ export default {
         datasets: [{
             data: [
               this.chart_data[1].entries[0].close,
-              this.chart_data[1].entries[1].close,	
-              this.chart_data[1].entries[2].close,	
-              this.chart_data[1].entries[3].close,	
-              this.chart_data[1].entries[4].close,	
-              this.chart_data[1].entries[5].close,	
-              this.chart_data[1].entries[6].close,	
-              this.chart_data[1].entries[7].close,	
+              this.chart_data[1].entries[1].close,
+              this.chart_data[1].entries[2].close,
+              this.chart_data[1].entries[3].close,
+              this.chart_data[1].entries[4].close,
+              this.chart_data[1].entries[5].close,
+              this.chart_data[1].entries[6].close,
+              this.chart_data[1].entries[7].close,
               this.chart_data[1].entries[8].close, 
               this.chart_data[1].entries[9].close
             ], // Specify the data values array
             fill: false,
-            borderColor: '#2196f3', // Add custom color border (Line)
-            backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+            borderColor: '#5f27cd', // Add custom color border (Line)
+            backgroundColor: '#5f27cd', // Add custom color background (Points and Fill)
             borderWidth: 1 // Specify bar border width
         }]
       },
@@ -32,6 +32,13 @@ export default {
         responsive: true, // Instruct chart js to respond nicely.
         legend: {
           display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: false
+            }
+          }],
         }
       }
     }

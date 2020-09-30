@@ -3,7 +3,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Layer from './components/layout/Layer'
+import { DropDownListPlugin } from '@syncfusion/ej2-vue-dropdowns'
+Vue.use(DropDownListPlugin)
 
 export default {
   name: 'App',
@@ -14,6 +17,7 @@ export default {
 </script>
 
 <style>
+@import url(https://cdn.syncfusion.com/ej2/material.css);
 .row {
   display: flex;
 }

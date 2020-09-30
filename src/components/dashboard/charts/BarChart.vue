@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       data: {
-        labels: ['', '', '', ''],
+        labels: ['18', '19', '20', 'F'],
         datasets: [{
           label: null,
           barThickness: 10,
@@ -20,20 +20,20 @@ export default {
             this.chart_data[0].entries[9].volume
           ],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(205, 132, 241,0.8)',
+            'rgba(197, 108, 240,0.8)',
+            'rgba(125, 95, 255,0.8)',
+            'rgba(113, 88, 226,0.8)',
+            'rgba(95, 39, 205,0.8)',
+            'rgba(52, 31, 151,0.8)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(205, 132, 241,1.0)',
+            'rgba(197, 108, 240,1.0)',
+            'rgba(125, 95, 255,1.0)',
+            'rgba(113, 88, 226,1.0)',
+            'rgba(95, 39, 205,1.0)',
+            'rgba(52, 31, 151,1.0)'
           ],
           borderWidth: 1
         }]
@@ -45,8 +45,11 @@ export default {
         },
         scales: {
           yAxes: [{
+            ticks: {
+                display: false
+            },
             gridLines: {
-              display: false
+              display: true
             }
           }],
           xAxes: [{

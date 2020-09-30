@@ -1,45 +1,50 @@
 <template>
   <div class="container">
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="1" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="0" :chart_data="data"/>
-    <BankVisual bank_title="BBL" v-if="data" :bank_status="2" :chart_data="data"/>
+    <div v-for="(value, name) in dropdown[item]" :key="name">
+      <BankVisual :bank_title="name" :end_key="value" :bank_status="1" :chart_data="data"/>
+    </div>
   </div>
 </template>
 
 <script>
 import BankVisual from './BankVisual'
-import axios from 'axios'
 
 export default {
   name: 'Dashboard',
-  props: {
-    msg: String
-  },
+  props: ['item'],
   components: {
     BankVisual
   },
   data(){
     return {
-      data: null
+      data: null,
+      dropdown: {
+        BANK: {
+          BAY: 1210,
+          BBL: 1213,
+          KBANK: 1817,
+          KKP: 1784,
+          KTB: 1793,
+          SCB: 2170,
+          TCAP: 1622,
+          TISCO: 2562,
+          TMB: 2366
+        },
+        ICT: {
+          ADVANC: 1069,
+          DTAC: 1831,
+          TRUE: 2493
+        },
+        ENERG: {
+          PIT: 2099,
+          PTTEP: 2081,
+          ESSO: 1324
+        }
+      }
     }
   },
   mounted () {
-    axios.get('https://market-api.ava.fund/api/exchanges/1/quotes/1817/info/entries?timeframe=DAY1&period=YEAR1').then( res => {
-      // console.log(res.data)
-      res.data.chart_list.forEach( (ind ,key) => {
-        // console.log(ind.entries.slice(Math.max(ind.entries.length - 10, 1)))
-        res.data.chart_list[key].entries = ind.entries.slice(Math.max(ind.entries.length - 10, 1))
-        // console.log(key)
-      });
-      this.data = res.data.chart_list
-    })
+    console.log(this.item)
   }
 }
 </script>

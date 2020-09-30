@@ -5,9 +5,9 @@
         {{bank_title}}
       </h3>
       <div class="status">
-        <span :class="className" v-if="bank_status === 0">success</span>
+        <span :class="className" v-if="bank_status === 0">buy</span>
         <span :class="className" v-else-if="bank_status === 1">hold</span>
-        <span :class="className" v-else>not sure</span>
+        <span :class="className" v-else>sell</span>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
 <style scoped>
   .bank-item {
     display: flex;
-    background-color:cyan;
+    background-color: #9276b5;
     align-items: center;
     justify-content: center;
   }
@@ -41,7 +41,8 @@ export default {
     align-items: center;
   }
   .status > span {
-    padding: 5px 20px;
+    padding: 5px 5px;
+    border-radius: 5px;
   }
   .success {
     background-color: #27ae60;

@@ -1,7 +1,7 @@
 <template>
   <div class="layer">
-    <Navbar class="nav-bar"/>
-    <Dashboard class="main"/>
+    <Navbar class="nav-bar" :getItem="getItem"/>
+    <Dashboard class="main" :item='item'/>
   </div>
 </template>
 
@@ -15,6 +15,15 @@ export default {
   components: {
     Navbar,
     Dashboard
+  },
+  data: () => {
+    return {item: 'BANK'}
+  },
+  methods: {
+    getItem(value){
+      this.item = value
+      // this.$forceUpdate();
+    }
   }
 }
 </script>
