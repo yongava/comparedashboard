@@ -1,35 +1,33 @@
 <template>
   <div class="row bank-visualizer" v-if="chart_data">
-    <BankItem :bank_title='bank_title' :bank_status="bank_status" />
-    <BlankItem />
-    <LineChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data'/>
-    <BlankItem />
-
+    <DonutChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <LineChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <BlankItem  class="item"/>
   </div>
 </template>
 
 <script>
-import BankItem from './items/BankItem'
 import BlankItem from './items/BlankItem'
 import LineChart from './charts/LineChart'
 import BarChart from './charts/BarChart'
+import DonutChart from './charts/DonutChart'
 import axios from 'axios'
 
 export default {
   name: 'BankVisual',
   props: ['bank_title', 'bank_status', 'end_key'],
   components: {
-    BankItem,
     BlankItem,
     LineChart,
-    BarChart
+    BarChart,
+    DonutChart
   },
   data(){
     return {
@@ -41,6 +39,7 @@ export default {
       res.data.chart_list.forEach( (ind ,key) => {
         res.data.chart_list[key].entries = ind.entries.slice(Math.max(ind.entries.length - 10, 1))
       });
+      console.log(res.data)
       this.chart_data = res.data.chart_list
     })
   }

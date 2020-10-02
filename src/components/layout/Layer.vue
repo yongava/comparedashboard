@@ -1,7 +1,10 @@
 <template>
   <div class="layer">
-    <Navbar class="nav-bar" :getItem="getItem"/>
-    <Dashboard class="main" :item='item'/>
+    <Navbar class="nav-bar" :getItem="getItem" style="z-index: 3"/>
+    <div class="row" style="z-index: 2">
+      <Sidebar class="left-side" :item='item'/>
+      <Dashboard class="main" :item='item'/>
+    </div>
   </div>
 </template>
 
@@ -9,12 +12,13 @@
 
 import Navbar from './Navbar'
 import Dashboard from '../dashboard/Dashboard'
-
+import Sidebar from './Sidebar'
 export default {
   name: 'Layer',
   components: {
     Navbar,
-    Dashboard
+    Dashboard,
+    Sidebar
   },
   data: () => {
     return {item: 'BANK'}
@@ -22,25 +26,30 @@ export default {
   methods: {
     getItem(value){
       this.item = value
-      // this.$forceUpdate();
     }
   }
 }
 </script>
 
-<style scoped>
-/* .layer {
-  width: 100%;
-} */
+<style>
 .row {
   display: flex;
 }
-.main {
-  /* margin-top: 65px; */
-}
-.nav-bar{
+.nav-bar {
   position: sticky;
   top: 0%;
   width: 2560px;
+  overflow: hidden;
+}
+.main {
+}
+.left-side {
+  position: sticky;
+  left: 0%;
+  z-index: 2
+}
+.item {
+  height: 232.77777px;
+  width: 232.77777px !important;
 }
 </style>

@@ -6,6 +6,9 @@
 import Vue from 'vue'
 import Layer from './components/layout/Layer'
 import { DropDownListPlugin } from '@syncfusion/ej2-vue-dropdowns'
+import VueKonva from 'vue-konva'
+
+Vue.use(VueKonva)
 Vue.use(DropDownListPlugin)
 
 export default {
