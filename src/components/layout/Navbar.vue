@@ -1,10 +1,10 @@
 <template>
 <div class="row justify-content-space">
-  <div>
+  <div style="position: fixed; width: 195px; padding: 18.5px;">
     <ejs-dropdownlist :dataSource='dropdown' :fields='dropField' value="BANK" @change="onChange($event)">
     </ejs-dropdownlist>
   </div>
-  <div>
+  <div style="padding-left: 252px">
     <h3 class="nav-item">Mct Cap</h3>
   </div>
   <div>
