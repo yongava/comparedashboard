@@ -15,8 +15,9 @@ export default {
   props: ['chart_data'],
   data() {
     var diagmar = 0
-    if(this.chart_data[0].entries[9].volume <= 10000000) diagmar = 55
-    else if(this.chart_data[0].entries[9].volume < 100000000 && this.chart_data[0].entries[9].volume > 10000000) diagmar = 55 * this.chart_data[0].entries[9].volume/100000000
+    console.log(this.chart_data[0].entries[9].volume)
+    if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 55; }
+    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 55 * this.chart_data[0].entries[9].volume/10000000
     else diagmar = 5
     return {
       configKonva: {
@@ -30,12 +31,11 @@ export default {
         fill: "#d79df4",
         stroke: "#ca7af1",
         strokeWidth: 2,
-        text: '11111'
       },
       configText: {
         x: 103,
         y: 110,
-        text: '10M',
+        text: this.chart_data[0].entries[9].volume / 1000000 + 'M',
         fontSize: 15,
         fontFamily: 'Calibri',
         fill: 'red'

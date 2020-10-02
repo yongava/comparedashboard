@@ -39,7 +39,6 @@ export default {
       res.data.chart_list.forEach( (ind ,key) => {
         res.data.chart_list[key].entries = ind.entries.slice(Math.max(ind.entries.length - 10, 1))
       });
-      console.log(res.data)
       this.chart_data = res.data.chart_list
     })
   }
