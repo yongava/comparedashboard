@@ -33,15 +33,21 @@ export default {
         strokeWidth: 2,
       },
       configText: {
-        x: 103,
+        x: 100,
         y: 110,
-        text: this.chart_data[0].entries[9].volume / 1000000 + 'M',
+        text: this.generate_text(this.chart_data[0].entries[9].volume),
         fontSize: 15,
         fontFamily: 'Calibri',
         fill: 'red'
       }
     };
   },
+  methods: {
+    generate_text: function(num) {
+      if(num > 100000) return (num / 1000000).toFixed(1) + 'M'
+      else return (num / 1000).toFixed(1) + 'K'
+    }
+  }
  }
 </script>
 
