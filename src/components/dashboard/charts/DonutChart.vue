@@ -32,7 +32,7 @@ export default {
         strokeWidth: 2,
       },
       configText: {
-        x: 100,
+        x: this.x_padding(this.chart_data[0].entries[9].volume),
         y: 110,
         text: this.generate_text(this.chart_data[0].entries[9].volume),
         fontSize: 15,
@@ -45,6 +45,10 @@ export default {
     generate_text: function(num) {
       if(num > 100000) return (num / 1000000).toFixed(1) + 'M'
       else return (num / 1000).toFixed(1) + 'K'
+    },
+    x_padding: function(num) {
+      if(this.generate_text(num).length > 4) return 100-(this.generate_text(num).length - 3)*3
+      else return 100
     }
   }
  }
