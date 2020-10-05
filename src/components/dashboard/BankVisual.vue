@@ -9,25 +9,25 @@
     <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
     <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
     <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BlankItem  class="item"/>
+    <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
   </div>
 </template>
 
 <script>
-import BlankItem from './items/BlankItem'
 import LineChart from './charts/LineChart'
 import BarChart from './charts/BarChart'
 import DonutChart from './charts/DonutChart'
+import RingChart from './charts/RingChart'
 import axios from 'axios'
 
 export default {
   name: 'BankVisual',
   props: ['bank_title', 'bank_status', 'end_key'],
   components: {
-    BlankItem,
     LineChart,
     BarChart,
-    DonutChart
+    DonutChart,
+    RingChart
   },
   data(){
     return {

@@ -15,7 +15,6 @@ export default {
   props: ['chart_data'],
   data() {
     var diagmar = 0
-    console.log(this.chart_data[0].entries[9].volume)
     if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 55; }
     else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 55 * this.chart_data[0].entries[9].volume/10000000
     else diagmar = 5
