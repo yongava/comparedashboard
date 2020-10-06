@@ -38,7 +38,7 @@ export default {
 .nav-bar {
   position: sticky;
   top: 0%;
-  width: 2560px;
+  width: 1110px;
   overflow: hidden;
 }
 .main {

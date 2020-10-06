@@ -1,4 +1,4 @@
-# dashboard-v
+# sector-compare
 
 ## Project setup
 ```

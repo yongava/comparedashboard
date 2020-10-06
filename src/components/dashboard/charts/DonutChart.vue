@@ -16,8 +16,8 @@ export default {
   data() {
     var diagmar = 0
     if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 55; }
-    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 55 * this.chart_data[0].entries[9].volume/10000000
-    else diagmar = 5
+    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 2000000) diagmar = 55 * this.chart_data[0].entries[9].volume/10000000
+    else diagmar = 10
     return {
       configKonva: {
         width: 232,
