@@ -5,10 +5,10 @@
     </ejs-dropdownlist>
   </div>
   <div style="padding-left: 252px">
-    <h3 class="nav-item">Mct Cap</h3>
+    <h3 class="nav-item">MKTCAP</h3>
   </div>
   <div>
-    <h3 class="nav-item">Price</h3>
+    <h3 class="nav-item">PRICE</h3>
   </div>
   <div>
     <h3 class="nav-item">EPS</h3>
@@ -17,7 +17,7 @@
     <h3 class="nav-item">PG</h3>
   </div>
   <div>
-    <h3 class="nav-item">EV / EBITDA</h3>
+    <h3 class="nav-item">EBITDA</h3>
   </div>
   <div>
     <h3 class="nav-item">PEG</h3>
