@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="width:1110px">
     <div v-for="(value, name) in dropdown[item]" :key="name">
       <BankVisual :bank_title="name" :end_key="value" :bank_status="1" :chart_data="data"/>
     </div>
