@@ -34,6 +34,14 @@ export default {
           display: false
         },
         scales: {
+          yAxes: [{
+            ticks: {
+                display: false
+            },
+            gridLines: {
+              display: true
+            }
+          }],
           xAxes: [{
             gridLines: {
               display: false

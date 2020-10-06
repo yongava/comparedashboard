@@ -20,8 +20,8 @@ export default {
     else diagmar = 10
     return {
       configKonva: {
-        width: 232,
-        height: 232
+        width: 100,
+        height: 100
       },
       configCircle: {
         x: 116,
