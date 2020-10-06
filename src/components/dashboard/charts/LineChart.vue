@@ -23,6 +23,7 @@ export default {
               this.chart_data[1].entries[9].close
             ], // Specify the data values array
             fill: false,
+            pointRadius: 0.5,
             borderColor: '#5f27cd', // Add custom color border (Line)
             backgroundColor: '#5f27cd', // Add custom color background (Points and Fill)
             borderWidth: 1 // Specify bar border width
