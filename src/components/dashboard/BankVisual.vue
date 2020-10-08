@@ -1,14 +1,14 @@
 <template>
   <div class="row bank-visualizer" v-if="chart_data">
-    <DonutChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <LineChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
-    <BarChart :width="100" :height="100" :chart_data='chart_data' class="item"/>
+    <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <LineChart  :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
   </div>
 </template>

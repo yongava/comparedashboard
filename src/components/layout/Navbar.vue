@@ -9,11 +9,19 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div class="nav-div">
     <h3 class="nav-item">Mct Cap</h3>
   </div>
   <div class="nav-div">
     <h3 class="nav-item">PRICES</h3>
+=======
+  <div style="padding-left: 252px">
+    <h3 class="nav-item">MKTCAP</h3>
+  </div>
+  <div>
+    <h3 class="nav-item">PRICE</h3>
+>>>>>>> fc2f7c121725f5d7538f7be4242b8385420521cc
   </div>
   <div class="nav-div">
     <h3 class="nav-item">EPS</h3>
@@ -21,8 +29,13 @@
   <div class="nav-div">
     <h3 class="nav-item">PG</h3>
   </div>
+<<<<<<< HEAD
   <div class="nav-div">
     <h3 class="nav-item">EV / EBITDA</h3>
+=======
+  <div>
+    <h3 class="nav-item">EBITDA</h3>
+>>>>>>> fc2f7c121725f5d7538f7be4242b8385420521cc
   </div>
   <div class="nav-div">
     <h3 class="nav-item">PEG</h3>
