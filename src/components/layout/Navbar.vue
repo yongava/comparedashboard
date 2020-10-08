@@ -66,8 +66,11 @@ export default {
 <style scoped>
   .nav-bar > div {
     background-color: #833ebe;
-    width: 100%;
-    padding: 20px;
+    width: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-self: center;
   }
   .nav-bar > div:hover {
     background-color: #6610f2;
@@ -91,12 +94,15 @@ export default {
   .fixed-feedback {
     position: fixed;
     width: 100px;
-    height: 93px;
+    height: 71.5px;
     z-index: 10000;
-    margin-left: -27px;
+    margin-left: -30px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #833ebe;
+  }
+  .nav-item {
+    width: 100%;
   }
 </style>
