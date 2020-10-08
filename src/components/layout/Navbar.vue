@@ -13,7 +13,7 @@
     <h3 class="nav-item">Mct Cap</h3>
   </div>
   <div class="nav-div">
-    <h3 class="nav-item">Price</h3>
+    <h3 class="nav-item">PRICES</h3>
   </div>
   <div class="nav-div">
     <h3 class="nav-item">EPS</h3>
