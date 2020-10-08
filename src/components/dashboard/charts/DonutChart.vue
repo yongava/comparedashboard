@@ -15,17 +15,17 @@ export default {
   props: ['chart_data'],
   data() {
     var diagmar = 0
-    if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 55; }
-    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 55 * this.chart_data[0].entries[9].volume/10000000
+    if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 35; }
+    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 35 * this.chart_data[0].entries[9].volume/10000000
     else diagmar = 5
     return {
       configKonva: {
-        width: 232,
-        height: 232
+        width: 100,
+        height: 100
       },
       configCircle: {
-        x: 116,
-        y: 116,
+        x: 48,
+        y: 48,
         radius: diagmar,
         fill: "#d79df4",
         stroke: "#ca7af1",
@@ -33,7 +33,7 @@ export default {
       },
       configText: {
         x: this.x_padding(this.chart_data[0].entries[9].volume),
-        y: 110,
+        y: 40,
         text: this.generate_text(this.chart_data[0].entries[9].volume),
         fontSize: 15,
         fontFamily: 'Calibri',
@@ -47,8 +47,8 @@ export default {
       else return (num / 1000).toFixed(1) + 'K'
     },
     x_padding: function(num) {
-      if(this.generate_text(num).length > 4) return 100-(this.generate_text(num).length - 3)*3
-      else return 100
+      if(this.generate_text(num).length > 4) return 35-(this.generate_text(num).length - 3)*3
+      else return 35
     }
   }
  }

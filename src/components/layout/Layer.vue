@@ -38,7 +38,7 @@ export default {
 .nav-bar {
   position: sticky;
   top: 0%;
-  width: 2560px;
+  width: 1100px;
   overflow: hidden;
 }
 .main {
@@ -49,7 +49,7 @@ export default {
   z-index: 2
 }
 .item {
-  height: 232.77777px;
-  width: 232.77777px !important;
+  height: 100px;
+  width: 100px !important;
 }
 </style>
