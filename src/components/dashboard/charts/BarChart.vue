@@ -8,11 +8,12 @@ export default {
   data() {
     return {
       data: {
-        labels: ['18', '19', '20', 'F'],
+        labels: ['2017', '2018', '2019', '2020'],
         datasets: [{
+          yAxisID: 'right-y-axis',
           label: null,
-          barThickness: 10,
-          barPercentage: 0.5,
+          barThickness: 20,
+          barPercentage: 0.9,
           data: [
             this.chart_data[0].entries[6].volume,
             this.chart_data[0].entries[7].volume,
@@ -20,20 +21,16 @@ export default {
             this.chart_data[0].entries[9].volume
           ],
           backgroundColor: [
-            'rgba(205, 132, 241,0.8)',
-            'rgba(197, 108, 240,0.8)',
-            'rgba(125, 95, 255,0.8)',
-            'rgba(113, 88, 226,0.8)',
-            'rgba(95, 39, 205,0.8)',
-            'rgba(52, 31, 151,0.8)'
+            '#53C353',
+            '#53C353',
+            '#53C353',
+            '#FFFFFF',
           ],
           borderColor: [
-            'rgba(205, 132, 241,1.0)',
-            'rgba(197, 108, 240,1.0)',
-            'rgba(125, 95, 255,1.0)',
-            'rgba(113, 88, 226,1.0)',
-            'rgba(95, 39, 205,1.0)',
-            'rgba(52, 31, 151,1.0)'
+            '#53C353',
+            '#53C353',
+            '#53C353',
+            '#FFFFFF'
           ],
           borderWidth: 1
         }]
@@ -45,16 +42,31 @@ export default {
         },
         scales: {
           yAxes: [{
+            id: 'right-y-axis',
+            type: 'linear',
+            position: 'right',
             ticks: {
-                display: false
+              display: true,
+              fontSize: 7,
+              fontColor: '#FFF',
+              callback: function(value) {
+                return value / 100000
+              }
             },
             gridLines: {
+              display: false
+            },
+            scaleLabel: {
               display: true
             }
           }],
           xAxes: [{
             gridLines: {
               display: false
+            },
+            ticks: {
+              fontSize: 7,
+              fontColor: '#FFF'
             }
           }],
         },

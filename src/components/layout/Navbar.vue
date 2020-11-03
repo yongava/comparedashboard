@@ -1,45 +1,6 @@
 <template>
-<div class="row justify-content-space">
-  <div class="nav-div">
-    <div class="top-left-fixed">
-
-      <div class="fixed-feedback">
-        <ejs-dropdownlist :dataSource='dropdown' :fields='dropField' width="70" value="BANK" @change="onChange($event)">
-        </ejs-dropdownlist>
-      </div>
-    </div>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">MctCap</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">PRICES</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">EPS</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">PG</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">EBITDA</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">PEG</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">PBV</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">DIV</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">D/E</h3>
-  </div>
-  <div class="nav-div">
-    <h3 class="nav-item">ROE</h3>
-  </div>
-</div>
+  <ejs-dropdownlist :dataSource='dropdown' :fields='dropField' color="white" value="BANK" @change="onChange($event)">
+  </ejs-dropdownlist>
 </template>
 
 <script>
@@ -49,7 +10,7 @@ export default {
   data() {
     return {
       dropdown: [
-        {Id: 'BANK', Game: 'BANK'},
+        {Id: 'BANK', Game: 'Bank'},
         {Id: 'ICT', Game: 'ICT'},
         {Id: 'ENERG', Game: 'ENERG'}
       ],
@@ -64,45 +25,16 @@ export default {
 }
 </script>
 <style scoped>
-  .nav-bar > div {
-    background-color: #833ebe;
-    width: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    justify-self: center;
-  }
-  .nav-bar > div:hover {
-    background-color: #6610f2;
-    /* width: 100%; */
-    /* padding: 20px; */
-  }
-  h3 {
-    text-align: center;
-  }
-  .nav-div{
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  .top-left-fixed {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 70px;
-  }
-  .fixed-feedback {
-    position: fixed;
-    width: 100px;
-    height: 71.5px;
-    z-index: 10000;
-    margin-left: -30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #833ebe;
-  }
-  .nav-item {
-    width: 100%;
-  }
+.e-selected-style{
+  color: white;
+}
+#ej2_dropdownlist_0 {
+  color: white;
+}
+.e-input-group-icon .e-ddl-icon .e-search-icon {
+  color: white !important;
+}
+.e-input-group .e-control-wrapper .e-ddl .e-lib .e-keyboard .e-valid-input{
+  border-color: white !important;
+}
 </style>

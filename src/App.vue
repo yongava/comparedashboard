@@ -1,5 +1,5 @@
 <template>
-  <layer/>
+  <layer class="back-transparent"/>
 </template>
 
 <script>
@@ -33,7 +33,16 @@ body {
 h3 {
   margin: 5px;
 }
-.layer {
-  position: relative;
+.back-transparent {
+  height: 100vh;
+  background-image: url('./assets/images/back.png');
+  background-size: cover;
+}
+@font-face {
+    font-family: 'custom-main';
+    src: url('./assets/fonts/NotoSans-Bold.ttf') format('noto-bold'),
+    url('./assets/fonts/NotoSans-BoldItalic.ttf') format('noto-bold-italic'),
+    url('./assets/fonts/NotoSans-Italic.ttf') format('noto-italic'),
+    url('./assets/fonts/NotoSans-Regular.ttf') format('noto-regular');
 }
 </style>

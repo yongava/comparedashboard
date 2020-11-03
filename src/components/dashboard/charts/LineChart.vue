@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       data: {
-        labels: ['','','','','','','','','',''],
+        labels: ['2016','20167','2018','2019','2020','','','','',''],
         datasets: [{
             data: [
               this.chart_data[1].entries[0].close,
@@ -23,10 +23,10 @@ export default {
               this.chart_data[1].entries[9].close
             ], // Specify the data values array
             fill: false,
-            pointRadius: 0.5,
-            borderColor: '#5f27cd', // Add custom color border (Line)
-            backgroundColor: '#5f27cd', // Add custom color background (Points and Fill)
-            borderWidth: 1 // Specify bar border width
+            pointRadius: 2,
+            borderColor: '#53C353', // Add custom color border (Line)
+            backgroundColor: '#FFF', // Add custom color background (Points and Fill)
+            borderWidth: 1.5 // Specify bar border width
         }]
       },
       options: {
@@ -40,12 +40,16 @@ export default {
                 display: false
             },
             gridLines: {
-              display: true
+              display: false
             }
           }],
           xAxes: [{
             gridLines: {
               display: false
+            },
+            ticks: {
+              fontSize: 5,
+              fontColor: '#FFF'
             }
           }],
         }

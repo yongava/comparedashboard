@@ -4,7 +4,7 @@
       <v-layer>
         <v-circle :config="configCircle">
         </v-circle>
-          <v-text :config="configText"></v-text>
+        <v-text :config="configText"></v-text>
       </v-layer>
     </v-stage>
   </div>
@@ -27,17 +27,17 @@ export default {
         x: 48,
         y: 48,
         radius: diagmar,
-        fill: "#d79df4",
-        stroke: "#ca7af1",
+        fill: "#53C353",
+        stroke: "#53C353",
         strokeWidth: 2,
       },
       configText: {
-        x: this.x_padding(this.chart_data[0].entries[9].volume),
+        x: 0,
         y: 40,
         text: this.generate_text(this.chart_data[0].entries[9].volume),
         fontSize: 15,
         fontFamily: 'Calibri',
-        fill: 'red'
+        fill: 'white'
       }
     };
   },

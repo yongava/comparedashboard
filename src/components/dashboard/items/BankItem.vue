@@ -25,13 +25,14 @@ export default {
       className
     }
   },
+  mounted(){
+  }
 }
 </script>
 
 <style scoped>
   .bank-item {
     display: flex;
-    background-color: #9276b5;
     align-items: center;
     justify-content: center;
   }
@@ -55,6 +56,7 @@ export default {
   }
   
   .bank-title {
-    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
   }
 </style>

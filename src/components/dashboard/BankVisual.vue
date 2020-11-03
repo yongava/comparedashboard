@@ -1,16 +1,39 @@
 <template>
-  <div class="row bank-visualizer" v-if="chart_data">
-    <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <LineChart  :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
-    <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
-  </div>
+  <tr v-if="chart_data">
+    <th>
+      <BankItem :bank_title="bank_title" :end_key="end_key" :bank_status="1" class="item bank-item"/>
+    </th>
+    <td>
+      <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <LineChart  :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+    </td>
+    <td>
+      <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
+    </td>
+  </tr>
 </template>
 
 <script>
@@ -19,6 +42,7 @@ import BarChart from './charts/BarChart'
 import DonutChart from './charts/DonutChart'
 import RingChart from './charts/RingChart'
 import axios from 'axios'
+import BankItem from './items/BankItem'
 
 export default {
   name: 'BankVisual',
@@ -27,7 +51,8 @@ export default {
     LineChart,
     BarChart,
     DonutChart,
-    RingChart
+    RingChart,
+    BankItem
   },
   data(){
     return {
@@ -46,16 +71,4 @@ export default {
 </script>
 
 <style scoped>
-  .bank-visualizer {
-    width: 100%;
-    margin-bottom: 1px;
-  }
-  .bank-visualizer > div{
-    min-height: 100px;
-    width: 100%;
-    border-left: 2px dashed #9276b5;
-    border-bottom: 2px dashed #9276b5;
-    margin-left: calc(-1 * 2px);
-    margin-bottom: calc(-1 * 2px);
-  }
 </style>

@@ -11,18 +11,18 @@ export default {
       data: {
         datasets: [{
             data: [random_data, 100-random_data],
-            backgroundColor: ['#3d46cd', '#979ca0'],
+            backgroundColor: ['#53C353', '#CCC6C6'],
             borderAlign: 'inner',
             borderColor: 'transparent'
         }],
       },
       options: {
-        cutoutPercentage: 58,
+        cutoutPercentage: 48,
         responsive: true, // Instruct chart js to respond nicely.
         elements: {
           center: {
             text: random_data,
-            color: '#3d46cd', // Default is #000000
+            color: '#FFF', // Default is #000000
             fontStyle: 'Arial', // Default is Arial
             sidePadding: 30, // Default is 20 (as a percentage)
             maxFontSize: 35,
