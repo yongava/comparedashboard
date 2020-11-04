@@ -6,7 +6,6 @@ export default {
   name: 'LineChart',
   props: ['chart_data'],
   data() {
-    this.chart_data[1].entries.sort()
     return {
       data: {
         labels: ['2016','20167','2018','2019','2020','','','','',''],
@@ -45,14 +44,12 @@ export default {
             ticks: {
               beginAtZero : true,
               display: true,
-              autoSkip: false,
+              autoSkipe: false,
               fontSize: 7,
               fontColor: '#FFF',
-              // callback: function(value) {
-              //   return value
-              // }
-              min: 10
-              // max: this.chart_data[1].entries[9].close
+              callback: function(value) {
+                return value
+              }
             },
             gridLines: {
               display: true,
