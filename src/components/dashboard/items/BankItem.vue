@@ -1,14 +1,13 @@
 <template>
   <div class="bank-item">
-    <div>
-      <h3 class="bank-title">
-        {{bank_title}}
-      </h3>
-      <div class="status">
-        <span :class="className" v-if="bank_status === 0">buy</span>
-        <span :class="className" v-else-if="bank_status === 1">hold</span>
-        <span :class="className" v-else>sell</span>
-      </div>
+    <h3 class="bank-title">
+      {{bank_title}}
+    </h3>
+    <h3 class="set">set</h3>
+    <div class="status">
+      <span :class="className" v-if="bank_status === 0">buy</span>
+      <span :class="className" v-else-if="bank_status === 1">hold</span>
+      <span :class="className" v-else>sell</span>
     </div>
   </div>
 </template>
@@ -32,21 +31,21 @@ export default {
 
 <style scoped>
   .bank-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    padding-left: 10px;
   }
   .status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: left;
   }
   .status > span {
-    padding: 5px 5px;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: white;
+    font-size: 10px;
+    padding: 2px 10px;
+    text-align: left;
   }
   .success {
-    background-color: #27ae60;
+    background-color: #53C353;
   }
   .hold {
     background-color: #f1c40f;
@@ -54,9 +53,13 @@ export default {
   .not-sure {
     background-color: #e74c3c;
   }
-  
   .bank-title {
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    text-align: start;
+  }
+  .set {
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: left;
   }
 </style>

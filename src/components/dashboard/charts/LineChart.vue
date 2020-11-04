@@ -6,10 +6,12 @@ export default {
   name: 'LineChart',
   props: ['chart_data'],
   data() {
+    this.chart_data[1].entries.sort()
     return {
       data: {
         labels: ['2016','20167','2018','2019','2020','','','','',''],
         datasets: [{
+            yAxisID: 'right-y-axis',
             data: [
               this.chart_data[1].entries[0].close,
               this.chart_data[1].entries[1].close,
@@ -31,21 +33,39 @@ export default {
       },
       options: {
         responsive: true, // Instruct chart js to respond nicely.
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
         scales: {
           yAxes: [{
+            id: 'right-y-axis',
+            type: 'linear',
+            position: 'right',
             ticks: {
-                display: false
+              beginAtZero : true,
+              display: true,
+              autoSkip: false,
+              fontSize: 7,
+              fontColor: '#FFF',
+              // callback: function(value) {
+              //   return value
+              // }
+              min: 10
+              // max: this.chart_data[1].entries[9].close
             },
             gridLines: {
-              display: false
-            }
+              display: true,
+              color: "rgba(255,255,255, 0)",
+              zeroLineColor: "rgba(255,255,255, 0.3)",
+              tickMarkLength: 5
+            },
+            color: "rgba(255,255,255, 0.6)"
           }],
           xAxes: [{
             gridLines: {
-              display: false
+              display: false,
+              drawBorder: false
             },
             ticks: {
               fontSize: 5,

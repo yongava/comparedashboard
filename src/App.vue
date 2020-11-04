@@ -37,6 +37,8 @@ h3 {
   height: 100vh;
   background-image: url('./assets/images/back.png');
   background-size: cover;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
 }
 @font-face {
     font-family: 'custom-main';

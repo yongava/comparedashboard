@@ -62,7 +62,7 @@ export default {
   z-index: 2
 }
 .item {
-  /* height: 150px; */
+  height: 100px;
   width: 200px !important;
 }
 .layer {
@@ -98,6 +98,7 @@ thead th {
 thead th:first-child {
   left: 0;
   z-index: 1;
+  width: 100px !important;
 }
 
 tbody th {
@@ -107,6 +108,7 @@ tbody th {
   border: 1px solid #CCC;
   border-left: none;
   border-top: none;
+  width: 100px !important;
 }
 td {
   border: 1px solid #CCC;

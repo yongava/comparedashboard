@@ -19,15 +19,16 @@ export default {
       options: {
         cutoutPercentage: 48,
         responsive: true, // Instruct chart js to respond nicely.
+        maintainAspectRatio: false,
         elements: {
           center: {
-            text: random_data,
+            text: random_data + "%",
             color: '#FFF', // Default is #000000
             fontStyle: 'Arial', // Default is Arial
             sidePadding: 30, // Default is 20 (as a percentage)
-            maxFontSize: 35,
-            minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
-            lineHeight: 20 // Default is 25 (in px), used for when text wraps
+            maxFontSize: 15,
+            minFontSize: 5, // Default is 20 (in px), set to false and text will not wrap.
+            lineHeight: 30 // Default is 25 (in px), used for when text wraps
           }
         }
       }

@@ -1,7 +1,7 @@
 <template>
   <tr v-if="chart_data">
     <th>
-      <BankItem :bank_title="bank_title" :end_key="end_key" :bank_status="1" class="item bank-item"/>
+      <BankItem :bank_title="bank_title" :end_key="end_key" :bank_status="0" class="bank-item"/>
     </th>
     <td>
       <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>

@@ -20,11 +20,11 @@ export default {
     else diagmar = 5
     return {
       configKonva: {
-        width: 100,
+        width: 200,
         height: 100
       },
       configCircle: {
-        x: 48,
+        x: 138,
         y: 48,
         radius: diagmar,
         fill: "#53C353",
@@ -32,7 +32,7 @@ export default {
         strokeWidth: 2,
       },
       configText: {
-        x: 0,
+        x: 30,
         y: 40,
         text: this.generate_text(this.chart_data[0].entries[9].volume),
         fontSize: 15,

@@ -37,6 +37,7 @@ export default {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
@@ -46,6 +47,7 @@ export default {
             type: 'linear',
             position: 'right',
             ticks: {
+              beginAtZero : true,
               display: true,
               fontSize: 7,
               fontColor: '#FFF',
@@ -54,11 +56,10 @@ export default {
               }
             },
             gridLines: {
-              display: false
+              color: "rgba(255, 255, 255, 0)",
+              zeroLineColor: "rgba(255, 255, 255, .3)",
+              tickMarkLength: 0
             },
-            scaleLabel: {
-              display: true
-            }
           }],
           xAxes: [{
             gridLines: {
