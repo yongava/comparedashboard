@@ -4,7 +4,7 @@
       <table>
         <thead>
           <tr>
-            <th>
+            <th style="z-index: 11">
               <Navbar class="nav-bar" :getItem="getItem"/>
             </th>
             <th>Market Cap</th>
@@ -50,6 +50,10 @@ export default {
 .row {
   display: flex;
 }
+th {
+  background-color: #3b3530;
+  z-index: 10;
+}
 .nav-bar {
   position: sticky;
   top: 0%;
@@ -62,8 +66,8 @@ export default {
   z-index: 2
 }
 .item {
-  height: 100px;
-  width: 200px !important;
+  height: 150px;
+  width: 300px !important;
 }
 .layer {
   display: flex;

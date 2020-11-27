@@ -7,28 +7,28 @@
       <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <LineChart  :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-horizontal  :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
-      <BarChart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
     </td>
     <td>
       <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
@@ -37,8 +37,9 @@
 </template>
 
 <script>
+import LineChartHorizontal from './charts/LineChartHorizontal'
+import LineChartVertical from './charts/LineChartVertical'
 import LineChart from './charts/LineChart'
-import BarChart from './charts/BarChart'
 import DonutChart from './charts/DonutChart'
 import RingChart from './charts/RingChart'
 import axios from 'axios'
@@ -48,8 +49,9 @@ export default {
   name: 'BankVisual',
   props: ['bank_title', 'bank_status', 'end_key'],
   components: {
+    LineChartHorizontal,
+    LineChartVertical,
     LineChart,
-    BarChart,
     DonutChart,
     RingChart,
     BankItem

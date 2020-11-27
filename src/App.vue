@@ -41,10 +41,10 @@ h3 {
   font-family: 'Courier New', Courier, monospace;
 }
 @font-face {
-    font-family: 'custom-main';
-    src: url('./assets/fonts/NotoSans-Bold.ttf') format('noto-bold'),
-    url('./assets/fonts/NotoSans-BoldItalic.ttf') format('noto-bold-italic'),
-    url('./assets/fonts/NotoSans-Italic.ttf') format('noto-italic'),
-    url('./assets/fonts/NotoSans-Regular.ttf') format('noto-regular');
+  font-family: 'custom-main';
+  src: url('./assets/fonts/NotoSans-Bold.ttf') format('noto-bold'),
+  url('./assets/fonts/NotoSans-BoldItalic.ttf') format('noto-bold-italic'),
+  url('./assets/fonts/NotoSans-Italic.ttf') format('noto-italic'),
+  url('./assets/fonts/NotoSans-Regular.ttf') format('noto-regular');
 }
 </style>
