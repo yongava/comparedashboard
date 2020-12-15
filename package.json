@@ -8,7 +8,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@syncfusion/ej2-vue-dropdowns": "^18.2.59",
     "axios": "^0.20.0",
     "chart.js": "^2.9.3",
     "chartjs-plugin-annotation": "^0.5.7",
@@ -17,7 +16,8 @@
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue-konva": "^2.1.6",
-    "vue-plugin-axios": "^1.0.14"
+    "vue-plugin-axios": "^1.0.14",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

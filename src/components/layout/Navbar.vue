@@ -1,6 +1,5 @@
 <template>
-  <ejs-dropdownlist :dataSource='dropdown' :fields='dropField' color="white" value="BANK" @change="onChange($event)">
-  </ejs-dropdownlist>
+  <span>bank</span>
 </template>
 
 <script>

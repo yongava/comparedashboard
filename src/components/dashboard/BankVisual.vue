@@ -1,73 +1,87 @@
 <template>
   <tr v-if="chart_data">
     <th>
-      <BankItem :bank_title="bank_title" :end_key="end_key" :bank_status="0" class="bank-item"/>
+      <BankItem :symbol="symbol" :symbol_status="symbol_status" class="bank-item"/>
     </th>
     <td>
-      <DonutChart :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <donut-chart :width="50" :height="50" :market_cap='market_cap' class="item"/>
     </td>
     <td>
-      <line-chart-horizontal  :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-horizontal v-if="yearly_price" :width="50" :height="50" :chart_data='yearly_price' :target_price='target_price' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[0]' class="item"/>
     </td>
     <td>
-      <line-chart-vertical   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[1]' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[2]' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[3]' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[4]' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[5]' class="item"/>
     </td>
     <td>
-      <line-chart   :width="50" :height="50" :chart_data='chart_data' class="item"/>
+      <line-chart-vertical :width="50" :height="50" :chart_data='chart_data[6]' class="item"/>
     </td>
     <td>
-      <RingChart :chart_data='chart_data' class="item" style="mergin: 10px;"/>
+      <ring-chart :width="50" :height="50" :ring_chart='ring_chart' class="item"/>
     </td>
   </tr>
 </template>
 
 <script>
+import DonutChart from './charts/DonutChart'
 import LineChartHorizontal from './charts/LineChartHorizontal'
 import LineChartVertical from './charts/LineChartVertical'
-import LineChart from './charts/LineChart'
-import DonutChart from './charts/DonutChart'
+// import LineChart from './charts/LineChart'
 import RingChart from './charts/RingChart'
-import axios from 'axios'
 import BankItem from './items/BankItem'
+import axios from 'axios'
 
 export default {
   name: 'BankVisual',
-  props: ['bank_title', 'bank_status', 'end_key'],
+  props: ['symbol'],
   components: {
+    DonutChart,
     LineChartHorizontal,
     LineChartVertical,
-    LineChart,
-    DonutChart,
+    // LineChart,
     RingChart,
     BankItem
   },
   data(){
     return {
-      chart_data: null
+      chart_data: null,
+      yearly_price: null,
+      symbol_status: '',
+      target_price: 0,
+      ring_chart: 0,
+      market_cap: 0
     }
   },
   mounted () {
-    axios.get(`https://market-api.ava.fund/api/exchanges/1/quotes/${this.end_key}/info/entries?timeframe=DAY1&period=YEAR1`).then( res => {
-      res.data.chart_list.forEach( (ind ,key) => {
-        res.data.chart_list[key].entries = ind.entries.slice(Math.max(ind.entries.length - 10, 1))
-      });
-      this.chart_data = res.data.chart_list
+    axios.get(`http://alpha.southeastasia.cloudapp.azure.com:8083/active/${this.symbol}`).then( res => {
+      if(res.status === 200){
+        this.symbol_status = res.data.result.recommend
+        this.chart_data = res.data.result.items[0].items
+        this.ring_chart = res.data.result.ROE
+        this.target_price = res.data.result.target_price
+        this.market_cap = res.data.result['MarketCap.']
+      }
     })
+    axios.get(`http://alpha.southeastasia.cloudapp.azure.com:8083/yearly_price/${this.symbol}`).then( res => {
+      if(res.status === 200){
+        this.yearly_price = res.data.chart_list[0].entries
+      }
+    })
+    
   }
 }
 </script>

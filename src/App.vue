@@ -1,20 +1,19 @@
 <template>
-  <layer class="back-transparent"/>
+  <!-- <layer class="back-transparent"/> -->
+  <router-view class="back-transparent"/>
 </template>
 
 <script>
 import Vue from 'vue'
-import Layer from './components/layout/Layer'
-import { DropDownListPlugin } from '@syncfusion/ej2-vue-dropdowns'
+// import Layer from './pages/Layer'
 import VueKonva from 'vue-konva'
 
 Vue.use(VueKonva)
-Vue.use(DropDownListPlugin)
 
 export default {
   name: 'App',
   components: {
-    Layer
+    // Layer
   }
 }
 </script>

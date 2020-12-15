@@ -4,9 +4,9 @@ import { Doughnut } from 'vue-chartjs'
 export default {
   extends: Doughnut,
   name: 'RingChart',
-  props: ['chart_data'],
+  props: ['ring_chart'],
   data() {
-    var random_data = Math.floor(Math.random() * 50);
+    var random_data = this.ring_chart;
     return {
       data: {
         datasets: [{

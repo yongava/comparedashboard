@@ -12,11 +12,11 @@
 <script>
 export default {
   name: 'DonutChart',
-  props: ['chart_data'],
+  props: ['market_cap'],
   data() {
     var diagmar = 0
-    if(this.chart_data[0].entries[9].volume >= 10000000) {diagmar = 35; }
-    else if(this.chart_data[0].entries[9].volume < 10000000 && this.chart_data[0].entries[9].volume > 1000000) diagmar = 35 * this.chart_data[0].entries[9].volume/10000000
+    if(this.market_cap >= 10000000) {diagmar = 35; }
+    else if(this.market_cap < 10000000 && this.market_cap > 1000000) diagmar = 35 * this.market_cap/10000000
     else diagmar = 5
     return {
       configKonva: {
@@ -34,7 +34,7 @@ export default {
       configText: {
         x: 30,
         y: 40,
-        text: this.generate_text(this.chart_data[0].entries[9].volume),
+        text: this.generate_text(this.market_cap),
         fontSize: 15,
         fontFamily: 'Calibri',
         fill: 'white'

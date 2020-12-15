@@ -1,13 +1,11 @@
 <template>
   <div class="bank-item">
     <h3 class="bank-title">
-      {{bank_title}}
+      {{symbol}}
     </h3>
     <h3 class="set">set</h3>
     <div class="status">
-      <span :class="className" v-if="bank_status === 0">buy</span>
-      <span :class="className" v-else-if="bank_status === 1">hold</span>
-      <span :class="className" v-else>sell</span>
+      <span :class="className">{{symbol_status}}</span>
     </div>
   </div>
 </template>
@@ -15,11 +13,11 @@
 <script>
 export default {
   name: 'BankItem',
-  props: ['bank_title', 'bank_status'],
+  props: ['symbol', 'symbol_status'],
   data(){
     let className = 'success'
-    if(this.bank_status === 1) className = 'hold'
-    if(this.bank_status === 2) className = 'not-sure'
+    if(this.symbol_status == 'Hold') className = 'hold'
+    if(this.symbol_status == 'Sell') className = 'not-sure'
     return {
       className
     }
@@ -56,6 +54,7 @@ export default {
   .bank-title {
     color: white;
     text-align: start;
+    font-weight: lighter;
   }
   .set {
     text-transform: uppercase;

@@ -8,9 +8,9 @@ export default {
   data() {
     return {
       data: {
-        labels: ['2017','2018','2019','2020', ''],
+        labels: [],
         datasets: [{
-          data: [5, 15, 10, 14, null], // Specify the data values array
+          data: [], // Specify the data values array
           fill: false,
           pointRadius: [3, 0, 0, 0, 0],
           borderColor: '#FFF', // Add custom color border (Line)
@@ -20,7 +20,7 @@ export default {
         }, {
           backgroundColor: "#799b3e",
           borderDash: [5, 5],
-          data: [null, null, null, 14, 20], // Specify the data values array
+          data: [], // Specify the data values array
           fill: false,
           pointRadius: [0, 0, 0, 0, 3],
           borderColor: '#FFF', // Add custom color border (Line)
@@ -71,6 +71,18 @@ export default {
     }
   },
   mounted () {
+    for(var i = 0; i < this.chart_data.actual_entries.length; i++)
+    this.chart_data.actual_entries.forEach( item => {
+      this.data.labels.push(item.year)
+      this.data.datasets[0].data.push(item.value)
+      this.data.datasets[1].data.push(null)
+    })
+    this.data.labels.push(this.chart_data.forecast_entries[0].year)
+    this.data.labels.push('')
+    this.data.datasets[0].data.push(this.chart_data.forecast_entries[0].value)
+    this.data.datasets[0].data.push(null)
+    this.data.datasets[1].data.push(this.chart_data.forecast_entries[0].value)
+    this.data.datasets[1].data.push(this.chart_data.forecast_entries[1].value)
     this.renderChart(this.data, this.options)
   }
 }
