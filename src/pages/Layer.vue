@@ -67,7 +67,7 @@ export default {
     }
   },
   mounted () {
-    axios.get(`http://alpha.southeastasia.cloudapp.azure.com:8083/active/${this.symbol}`).then( res => {
+    axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.symbol}`).then( res => {
       if(res.status === 200){
         this.symbol_list = res.data.result.symbol_list
         this.sector = res.data.result.sector
