@@ -67,7 +67,9 @@ export default {
     }
   },
   mounted () {
-    axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.symbol}`).then( res => {
+    console.log(this.symbol)
+    console.log(this.$route.query.symbol)
+    axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.$route.query.symbol}`).then( res => {
       if(res.status === 200){
         this.symbol_list = res.data.result.symbol_list
         this.sector = res.data.result.sector

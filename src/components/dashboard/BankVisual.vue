@@ -67,7 +67,7 @@ export default {
     }
   },
   mounted () {
-    axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.symbol}`).then( res => {
+    axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.$route.query.symbol}`).then( res => {
       if(res.status === 200){
         this.symbol_status = res.data.result.recommend
         this.chart_data = res.data.result.items[0].items
@@ -76,7 +76,7 @@ export default {
         this.market_cap = res.data.result['MarketCap.']
       }
     })
-    axios.get(`https://dbs-funda.alpha.lab.ai/yearly_price/${this.symbol}`).then( res => {
+    axios.get(`https://dbs-funda.alpha.lab.ai/yearly_price/${this.$route.query.symbol}`).then( res => {
       if(res.status === 200){
         this.yearly_price = res.data.chart_list[0].entries
       }
