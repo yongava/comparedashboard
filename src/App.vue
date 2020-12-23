@@ -34,7 +34,7 @@ h3 {
 }
 .back-transparent {
   height: 100vh;
-  background-image: url('./assets/images/back.png');
+  background-image: url('./assets/images/back.jpg');
   background-size: cover;
   color: white;
   font-family: 'Courier New', Courier, monospace;

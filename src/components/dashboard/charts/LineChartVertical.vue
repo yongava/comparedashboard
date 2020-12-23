@@ -88,7 +88,7 @@ export default {
             type: 'line',
             mode: 'vertical',
             scaleID: 'x-axis',
-            value: 4.5,
+            value: 5,
             borderColor: 'rgb(255, 255, 255)',
             borderWidth: 2,
             borderDash: [5, 5],

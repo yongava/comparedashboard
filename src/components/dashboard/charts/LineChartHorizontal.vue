@@ -5,23 +5,26 @@ import chartjsPluginAnnotation from "chartjs-plugin-annotation"
 export default {
   extends: Line,
   name: 'LineChartVertical',
-  props: ['chart_data'],
+  props: ['chart_data', 'target_price'],
   data() {
+    var target_price = this.target_price
+    var last_price = this.chart_data[4].close
+    console.log(this.chart_data)
+    console.log(this.target_price)
     return {
       data: {
         labels: ['2016','2017','2018','2019','2020'],
         datasets: [{
-          // data: [
-          //   this.chart_data[0].volume ? parseInt(this.chart_data[0].volume) : null,
-          //   this.chart_data[1].volume ? parseInt(this.chart_data[1].volume) : null,
-          //   this.chart_data[2].volume ? parseInt(this.chart_data[2].volume) : null,
-          //   this.chart_data[3].volume ? parseInt(this.chart_data[3].volume) : null,
-          //   this.chart_data[4].volume ? parseInt(this.chart_data[4].volume) : null,
-          // ]
-          data: [15000000, 10000000, 10000000, 20000000, 31000000], // Specify the data values array
+          data: [
+            this.chart_data[0].close ? parseInt(this.chart_data[0].close) : null,
+            this.chart_data[1].close ? parseInt(this.chart_data[1].close) : null,
+            this.chart_data[2].close ? parseInt(this.chart_data[2].close) : null,
+            this.chart_data[3].close ? parseInt(this.chart_data[3].close) : null,
+            this.chart_data[4].close ? parseInt(this.chart_data[4].close) : null,
+          ],
           fill: false,
           pointRadius: 3,
-          borderColor: '#229922', // Add custom color border (Line)
+          borderColor: this.chart_data[4].close > this.target_price ? '#229922' : '#E0383F', // Add custom color border (Line)
           backgroundColor: '#FFF', // Add custom color background (Points and Fill)
           borderWidth: 1.5, // Specify bar border width
           lineTension: 0
@@ -47,14 +50,12 @@ export default {
               fontSize: 12,
               fontColor: '#FFF',
               autoSkip: false,
-              min: 50000000,
-              max: 0,
               callback: function(value) {
-                return value / 1000000 + 'K'
+                return value
               }
             },
             afterBuildTicks: function(scale) {
-              scale.ticks = [31000000, 15000000];
+              scale.ticks = [last_price < target_price ? last_price : target_price, last_price < target_price ? target_price : last_price];
               return;
             },
             gridLines: {
@@ -81,7 +82,7 @@ export default {
             type: 'line',
             mode: 'horizontal',
             scaleID: 'right-y-axis',
-            value: 15000000,
+            value: target_price,
             borderColor: 'rgb(255, 255, 255)',
             borderWidth: 2,
             borderDash: [5, 5],

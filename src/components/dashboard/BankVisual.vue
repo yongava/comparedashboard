@@ -78,7 +78,7 @@ export default {
     })
     axios.get(`https://dbs-funda.alpha.lab.ai/yearly_price/${this.$route.query.symbol}`).then( res => {
       if(res.status === 200){
-        this.yearly_price = res.data.chart_list[0].entries
+        this.yearly_price = res.data.chart_list[1].entries
       }
     })
   }

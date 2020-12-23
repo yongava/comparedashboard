@@ -31,8 +31,8 @@
               <th style="z-index: 11; text-transform:uppercase;">
                 {{sector}}
               </th>
-              <th>Price</th>
               <th>Market Cap</th>
+              <th>Price</th>
               <th>Net Profit</th>
               <th>EPS</th>
               <th>PE</th>
@@ -67,8 +67,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.symbol)
-    console.log(this.$route.query.symbol)
     axios.get(`https://dbs-funda.alpha.lab.ai/active/${this.$route.query.symbol}`).then( res => {
       if(res.status === 200){
         this.symbol_list = res.data.result.symbol_list
@@ -114,10 +112,10 @@ th {
   justify-content: center;
 }
 .main-container {
-  /* margin: auto; */
-  height: 80vh;
+  margin: 0;
+  height: 90vh;
   font-family: Arial, Helvetica, sans-serif;
-  min-width: 1500px;
+  min-width: 400px;
 }
 
 table {
@@ -171,7 +169,7 @@ thead th {
 .table-container {
   margin: auto;
   width: 87%;
-  height: 60vh;
+  height: 80vh;
   background: rgba(0, 0, 0, 0.7);
   overflow: scroll;
 }
